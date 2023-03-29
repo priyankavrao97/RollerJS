@@ -50,8 +50,12 @@ export class Roller {
                 if(flag==false)
                     this._distribution.set(value,1);
             }
-            // else
-            //     this._distribution.set(value,1);
+            else{
+                this._distribution=new Map();
+                this._distribution.set(value,1);
+
+            }
+                
             return value;
 
         }
@@ -75,6 +79,7 @@ export class Roller {
     // rolled. Even if a face has not yet been rolled, its key should have a
     // value of 0.
     distribution(): Map<number, number>{
-        return new Map<number, number>();
+        //return new Map<number, number>();
+        return this._distribution;
     }
 } // end of Roller class
